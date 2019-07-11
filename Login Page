@@ -1,0 +1,77 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'login_form.dart';
+
+class LoginPage extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() {
+    return LoginPageState();
+  }
+}
+
+class LoginPageState extends State<LoginPage>{
+  @override
+  Widget build(BuildContext context) {
+    ScreenUtil.instance = ScreenUtil(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        allowFontScaling: true)..init(context);
+    return new Directionality(
+        textDirection: TextDirection.rtl,
+        child: new Scaffold(
+          backgroundColor: Color(0xf5ffffff),
+            body: new Stack(
+              fit: StackFit.expand,
+              alignment: AlignmentDirectional.topCenter,
+              children: <Widget>[
+                new SingleChildScrollView(
+                  child: new Column(
+                    children: <Widget>[
+                      new Padding(
+                        padding: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(50.0)
+                        ),
+                        child: new CircleAvatar(
+                          backgroundColor: Colors.blueAccent,
+                          radius: ScreenUtil.getInstance().setHeight(60.0),
+                        ),
+                      ),
+                      new LoginForm(),
+                      new Padding(
+                        padding: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(50.0)
+                        ),
+                        child: new Container(
+                          padding: EdgeInsets.symmetric(horizontal: 25.0),
+                          child: new Row(
+                            children: <Widget>[
+                              new Text("هنوز ثبت نام نکرده اید؟",
+                                  style: new TextStyle(
+                                      fontFamily: "Vazir",
+                                      fontSize: 17.0,
+                                      fontWeight: FontWeight.w700
+                                  )
+                              ),
+                              new Padding(
+                                padding: EdgeInsets.only(right: ScreenUtil.getInstance().setWidth(10.0)
+                                ),
+                                child: new Text("ثبت نام",
+                                    style: new TextStyle(
+                                        fontWeight: FontWeight.w900,
+                                        fontSize: 20,
+                                        fontFamily: "Vazir",
+                                        color: Colors.blueAccent
+                                    )
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                )
+              ],
+            )
+        ),
+    );
+  }
+}
