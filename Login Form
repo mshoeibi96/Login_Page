@@ -92,10 +92,10 @@ class LoginFormState extends State<LoginForm>{
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             new TextField(
-              style: _textStyle("Poppins-Light", Colors.black, 21.0, FontWeight.w400) ,
+              style: _textStyle("Poppins-Light", Colors.black, 19.5, FontWeight.w400) ,
               decoration: new InputDecoration(
                 icon: new Container(
-                  padding: EdgeInsets.only(top: 10.0, left: 10.0),
+                  padding: EdgeInsets.only(top: 0.0, left: 10.0),
                   child: new Icon(Icons.account_box,
                     size: ScreenUtil.getInstance().setHeight(40.0),
                     color: Colors.blueAccent,
@@ -122,10 +122,11 @@ class LoginFormState extends State<LoginForm>{
                 top: ScreenUtil.getInstance().setHeight(40.0),
               ),
               child: new TextField(
+                style: _textStyle("Poppins-Light", Colors.black, 19.5, FontWeight.w400),
                 obscureText: _passwordVisible,
                 decoration: new InputDecoration(
                   icon: new Container(
-                    padding: EdgeInsets.only(top: 10.0, left: 10.0),
+                    padding: EdgeInsets.only(top: 0.0, left: 10.0),
                     child: new Icon(Icons.lock,
                       size: ScreenUtil.getInstance().setHeight(40.0),
                       color: Colors.blueAccent,
