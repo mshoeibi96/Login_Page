@@ -2,6 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'login_form.dart';
 
+TextStyle _textStyle(String _fontFamily,Color _fontColor, double _fontSize, FontWeight _fontWeight){
+  return new TextStyle(
+    fontFamily: _fontFamily,
+    fontSize: _fontSize,
+    fontWeight: _fontWeight,
+    color: _fontColor,
+  );
+}
+
 class LoginPage extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
@@ -35,35 +44,29 @@ class LoginPageState extends State<LoginPage>{
                           radius: ScreenUtil.getInstance().setHeight(60.0),
                         ),
                       ),
-                      new LoginForm(),
                       new Padding(
-                        padding: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(50.0)
+                        padding: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(20.0)
                         ),
-                        child: new Container(
-                          padding: EdgeInsets.symmetric(horizontal: 25.0),
-                          child: new Row(
-                            children: <Widget>[
-                              new Text("هنوز ثبت نام نکرده اید؟",
-                                  style: new TextStyle(
-                                      fontFamily: "Vazir",
-                                      fontSize: 17.0,
-                                      fontWeight: FontWeight.w700
-                                  )
+                        child: new LoginForm(),
+                      ),
+                      new Padding(
+                        padding: EdgeInsets.only(
+                            top: ScreenUtil.getInstance().setHeight(70.0),
+                            right: ScreenUtil.getInstance().setWidth(30.0)
+                        ),
+                        child: new Row(
+                          children: <Widget>[
+                            new Text("هنوز ثبت نام نکرده اید؟",
+                                style: _textStyle("Vazir", Colors.black, 16.0, FontWeight.w700)
+                            ),
+                            new Padding(
+                              padding: EdgeInsets.only(right: ScreenUtil.getInstance().setWidth(10.0)
                               ),
-                              new Padding(
-                                padding: EdgeInsets.only(right: ScreenUtil.getInstance().setWidth(10.0)
-                                ),
-                                child: new Text("ثبت نام",
-                                    style: new TextStyle(
-                                        fontWeight: FontWeight.w900,
-                                        fontSize: 20,
-                                        fontFamily: "Vazir",
-                                        color: Colors.blueAccent
-                                    )
-                                ),
-                              )
-                            ],
-                          ),
+                              child: new Text("ثبت نام",
+                                  style: _textStyle("vazir", Colors.blueAccent, 20.0, FontWeight.w900)
+                              ),
+                            )
+                          ],
                         ),
                       )
                     ],
