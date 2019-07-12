@@ -91,30 +91,34 @@ class LoginFormState extends State<LoginForm>{
         child: new Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            new TextField(
-              style: _textStyle("Poppins-Light", Colors.black, 19.5, FontWeight.w400) ,
-              decoration: new InputDecoration(
-                icon: new Container(
-                  padding: EdgeInsets.only(top: 0.0, left: 10.0),
-                  child: new Icon(Icons.account_box,
-                    size: ScreenUtil.getInstance().setHeight(40.0),
-                    color: Colors.blueAccent,
-                  ),
-                ),
-                enabledBorder: new UnderlineInputBorder(
-                    borderSide: new BorderSide(
-                        color: Colors.blueGrey,
-                        width: 1.5
-                    )
-                ),
-                focusedBorder: new UnderlineInputBorder(
-                    borderSide: new BorderSide(
+            new Padding(
+              padding: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(0.0)
+              ),
+              child: new TextField(
+                style: _textStyle("Poppins-Light", Colors.black, 19.5, FontWeight.w400) ,
+                decoration: new InputDecoration(
+                    icon: new Container(
+                      padding: EdgeInsets.only(top: 0.0, left: 10.0),
+                      child: new Icon(Icons.account_box,
+                        size: ScreenUtil.getInstance().setHeight(40.0),
                         color: Colors.blueAccent,
-                        width: 1.5
-                    )
+                      ),
+                    ),
+                    enabledBorder: new UnderlineInputBorder(
+                        borderSide: new BorderSide(
+                            color: Colors.blueGrey,
+                            width: 1.8
+                        )
+                    ),
+                    focusedBorder: new UnderlineInputBorder(
+                        borderSide: new BorderSide(
+                            color: Colors.blueAccent,
+                            width: 1.8
+                        )
+                    ),
+                    hintText: "نام کاربری",
+                    hintStyle: _textStyle("Vazir" ,Colors.blueGrey, 18.0, FontWeight.w700)
                 ),
-                hintText: "نام کاربری",
-                hintStyle: _textStyle("Vazir" ,Colors.blueGrey, 18.0, FontWeight.w700)
               ),
             ),
             new Padding(
@@ -135,13 +139,13 @@ class LoginFormState extends State<LoginForm>{
                   enabledBorder: new UnderlineInputBorder(
                       borderSide: new BorderSide(
                           color: Colors.blueGrey,
-                          width: 1.5
+                          width: 1.8
                       )
                   ),
                   focusedBorder: new UnderlineInputBorder(
                       borderSide: new BorderSide(
                           color: Colors.blueAccent,
-                          width: 1.5
+                          width: 1.8
                       )
                   ),
                   hintText: "رمز عبور",
